@@ -14,7 +14,8 @@ pub fn main() {
     let invalid_witness = FieldElement::new(vec![1<<15], p, irr.clone()); 
 
     /* BEGIN HACK */
-    let witness = vec![];
+    // The sum of p identical values ​​is 0
+    let witness = vec![invalid_witness.clone(); p as usize];
     let m = vec![FieldElement::new(vec![0], p, irr.clone()); 1<<6]; 
     /* END HACK */
 
